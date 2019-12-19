@@ -1,0 +1,65 @@
+{
+    "name": "Dataminr",
+    "description": "Dataminr senses critical events as they happen and alerts professionals in news, finance, public sector, corporate security, and communications faster than traditional sources.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/28244-www-dataminr-com.jpg",
+    "tags": [
+        "api provider",
+        "data",
+        "have api"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/dataminr\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "Dataminr",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/28244-www-dataminr-com.jpg",
+            "humanURL": "https:\/\/www.dataminr.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-openapi",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/dataminr-openapi.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/dataminr"
+        },
+        {
+            "type": "Email",
+            "url": "support@dataminr.com"
+        },
+        {
+            "type": "Email",
+            "url": "recruiting@dataminr.com"
+        },
+        {
+            "type": "Email",
+            "url": "media@dataminr.com"
+        },
+        {
+            "type": "Email",
+            "url": "info@dataminr.com"
+        },
+        {
+            "type": "Email",
+            "url": "privacy@dataminr.com"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/Dataminr"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/www.dataminr.com"
+        }
+    ]
+}
