@@ -1,0 +1,45 @@
+generated: '2026-07-18'
+method: searched
+source: https://developer.dataminr.com
+notes: >-
+  No public OpenAPI is published. Auth model captured from Dataminr's developer
+  portal and confirmed by live probes of the Pulse API gateway
+  (gateway.dataminr.com): the token endpoint /auth/2/token exists (HTTP 405 on
+  GET, 500 on empty POST) and protected resources such as /api/3/alerts and
+  /account/2/get_lists return HTTP 401 without a bearer token.
+summary:
+  types:
+  - oauth2
+  oauth2_flows:
+  - clientCredentials
+  token_delivery: bearer
+schemes:
+- name: PulseOAuth2
+  type: oauth2
+  flow: clientCredentials
+  description: >-
+    Client-credentials grant. The integration exchanges a client_id and
+    client_secret at the token endpoint for a short-lived access token
+    (dmaToken) plus a refresh token, then presents the token on each request.
+  token_url: https://gateway.dataminr.com/auth/2/token
+  token_field: dmaToken
+  refresh_field: refreshToken
+  request_header: 'Authorization: Dmauth <dmaToken>'
+  sources:
+  - https://developer.dataminr.com
+  - live probe gateway.dataminr.com
+hosts:
+  api_gateway: https://gateway.dataminr.com
+verified_endpoints:
+- path: /auth/2/token
+  method: POST
+  observed_status: 405-on-GET / 500-on-empty-POST
+  note: token endpoint present, requires POST body
+- path: /api/3/alerts
+  method: GET
+  observed_status: 401
+  note: bearer token required
+- path: /account/2/get_lists
+  method: GET
+  observed_status: 401
+  note: bearer token required
