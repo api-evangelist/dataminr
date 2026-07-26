@@ -1,0 +1,22 @@
+# Dataminr
+
+> Dataminr delivers AI-powered real-time event, threat and risk intelligence, detecting breaking events and emerging risks across more than one million public data sources. Its Pulse API (gateway.dataminr.com) exposes alert consumption and watchlist/account management for corporate security, cyber defense, public sector and news use cases, authenticated with an OAuth2 client-credentials token flow.
+
+## APIs
+- [Dataminr Pulse API](https://developer.dataminr.com): OAuth2-secured REST gateway at https://gateway.dataminr.com — alert polling (/api/3/alerts) and account/watchlist management (/account/2/*).
+
+## Authentication
+- [Authentication profile](authentication/dataminr-authentication.yml): OAuth2 client-credentials; POST /auth/2/token returns a dmaToken presented as `Authorization: Dmauth <token>`.
+
+## Artifacts
+- [API conventions](conventions/dataminr-conventions.yml): versioning, cursor-based alert polling, error handling.
+- [Lifecycle](lifecycle/dataminr-lifecycle.yml): URI-path versioning, status page.
+- [Conformance](conformance/dataminr-conformance.yml): OAuth2, SOC 2 Type 2, ISO 27001/27701, NIST 800-171, GDPR/CCPA.
+- [Domain security](security/dataminr-domain-security.yml): TLS 1.3, HSTS, SPF, DMARC (reject), CAA.
+- [Trust center](security/dataminr-trust-center.yml): certifications and controls.
+
+## Docs
+- [Developer portal](https://developer.dataminr.com)
+- [Trust services](https://www.dataminr.com/v1/dataminr-trust-services/)
+- [Status page](https://status.dataminr.com)
+- [Blog](https://www.dataminr.com/blog)

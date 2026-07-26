@@ -1,8 +1,28 @@
 aid: dataminr
 name: Dataminr
-description: 'Dataminr is a company surfaced as a portfolio company of ivp and added to the API Evangelist
-  network as a stub for enrichment. Sector: analytics. This profile is a lead awaiting the enrichment
-  pipeline.'
+description: >-
+  Dataminr delivers AI-powered real-time event, threat and risk intelligence,
+  detecting breaking events and emerging risks across more than one million
+  public data sources using proprietary large language models and multi-modal
+  fusion AI. Its product lines span corporate security, cyber defense, public
+  sector (First Alert) and newsroom situational awareness, serving government
+  agencies and a large share of the Fortune 50. The Dataminr Pulse API exposes
+  real-time alert consumption plus watchlist and account management over an
+  OAuth2-secured REST gateway (gateway.dataminr.com), enabling integrations with
+  SIEM, SOAR and security operations tooling.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://www.dataminr.com/favicon.ico
 url: https://raw.githubusercontent.com/api-evangelist/dataminr/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,11 +32,33 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
 tags:
 - Company
 - Analytics
-apis: []
+- Threat Intelligence
+- Risk
+- Real-Time
+- Security
+- Artificial Intelligence
+- Alerting
+apis:
+- name: Dataminr Pulse API
+  description: >-
+    OAuth2-secured REST API for consuming Dataminr real-time alerts and managing
+    watchlists/lists. Token flow at /auth/2/token; alert polling at /api/3/alerts;
+    account and list management at /account/2/*.
+  humanURL: https://developer.dataminr.com
+  baseURL: https://gateway.dataminr.com
+  tags:
+  - Threat Intelligence
+  - Alerting
+  - Real-Time
+  properties:
+  - type: Authentication
+    url: authentication/dataminr-authentication.yml
+  - type: Documentation
+    url: https://developer.dataminr.com
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +67,40 @@ maintainers:
 common:
 - type: Website
   url: https://www.dataminr.com
+- type: DeveloperPortal
+  url: https://developer.dataminr.com
+- type: Documentation
+  url: https://developer.dataminr.com
+- type: Blog
+  url: https://www.dataminr.com/blog
+- type: Support
+  url: https://www.dataminr.com/contact
+- type: GitHubOrganization
+  url: https://github.com/dataminr
+- type: PrivacyPolicy
+  url: https://www.dataminr.com/privacy-policy
+- type: TermsOfService
+  url: https://www.dataminr.com/terms-of-use
+- type: StatusPage
+  url: https://status.dataminr.com
+- type: TrustCenter
+  url: security/dataminr-trust-center.yml
+- type: Compliance
+  url: https://www.dataminr.com/v1/dataminr-trust-services/
+- type: Authentication
+  url: authentication/dataminr-authentication.yml
+- type: Conventions
+  url: conventions/dataminr-conventions.yml
+- type: Lifecycle
+  url: lifecycle/dataminr-lifecycle.yml
+- type: Conformance
+  url: conformance/dataminr-conformance.yml
+- type: DomainSecurity
+  url: security/dataminr-domain-security.yml
+- type: LLMsTxt
+  url: llms/dataminr-llms.txt
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

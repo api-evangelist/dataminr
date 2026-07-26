@@ -1,0 +1,29 @@
+generated: '2026-07-18'
+method: searched
+probe: true
+source: https://www.dataminr.com/v1/dataminr-trust-services/
+url: https://www.dataminr.com/v1/dataminr-trust-services/
+request_access: https://app.conveyor.com/
+certifications:
+- SOC 2 Type 2
+- ISO/IEC 27001:2013
+- ISO/IEC 27701:2019
+- NIST 800-171
+- UK Cyber Essentials Plus
+- GDPR
+- CCPA
+controls:
+  encryption_at_rest: AES-256
+  encryption_in_transit: TLS 1.2+
+  soc: 24/7/365 security operations center
+  audits: External audits conducted annually
+evidence:
+- source: https://www.dataminr.com/v1/dataminr-trust-services/
+  keywords:
+  - soc 2 type 2
+  - iso/iec 27001
+  - iso/iec 27701
+  - nist 800-171
+  - cyber essentials plus
+  - gdpr
+  - ccpa

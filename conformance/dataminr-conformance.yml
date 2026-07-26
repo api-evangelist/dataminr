@@ -1,0 +1,37 @@
+generated: '2026-07-18'
+method: searched
+source: https://www.dataminr.com/v1/dataminr-trust-services/
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    Pulse API uses an OAuth2 client-credentials token endpoint
+    (gateway.dataminr.com/auth/2/token); protected endpoints require a bearer token.
+- id: soc2-type2
+  conforms: true
+  evidence: SOC 2 Type 2 audited (trust services page)
+- id: iso-27001
+  conforms: true
+  evidence: ISO/IEC 27001:2013 certified
+- id: iso-27701
+  conforms: true
+  evidence: ISO/IEC 27701:2019 certified (privacy information management)
+- id: nist-800-171
+  conforms: true
+  evidence: NIST 800-171 aligned
+- id: uk-cyber-essentials-plus
+  conforms: true
+  evidence: UK Cyber Essentials Plus certified
+- id: gdpr
+  conforms: true
+  evidence: GDPR data processing addendums + international transfer mechanisms
+- id: ccpa
+  conforms: true
+  evidence: CCPA procedures for California residents
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No application/problem+json error contract published
+- id: fhir-r4
+  conforms: false
+- id: fapi
+  conforms: false

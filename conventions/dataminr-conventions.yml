@@ -1,0 +1,42 @@
+generated: '2026-07-18'
+method: searched
+source: https://developer.dataminr.com
+notes: >-
+  Cross-cutting semantics for the Dataminr Pulse API. No public OpenAPI is
+  published; conventions captured from the developer portal and confirmed
+  against live gateway probes. Only documented/observed behavior is recorded.
+authentication:
+  style: oauth2-client-credentials
+  token_endpoint: https://gateway.dataminr.com/auth/2/token
+  header: 'Authorization: Dmauth <dmaToken>'
+  ref: authentication/dataminr-authentication.yml
+versioning:
+  style: uri-path
+  observed_versions:
+  - auth/2
+  - account/2
+  - api/3
+  note: version segment is embedded in the URL path per service.
+pagination:
+  style: cursor
+  mechanism: >-
+    Alert polling is cursor-based. A GET /api/3/alerts response returns a
+    cursor which the client passes back on the next request to continue
+    consuming new alerts (forward polling). Consumers persist the cursor
+    between polls.
+idempotency:
+  supported: false
+  note: >-
+    No idempotency-key contract is documented. The read/poll surface is
+    naturally idempotent but no write idempotency header is published.
+error_envelope:
+  ref: errors/
+  note: >-
+    Errors surface as HTTP status codes (401 observed on unauthenticated
+    protected endpoints). No RFC 9457 problem+json contract is published.
+rate_limiting:
+  documented: false
+  note: Rate limits are governed by the client's subscription; not publicly documented.
+transport:
+  base_url: https://gateway.dataminr.com
+  tls: TLSv1.3

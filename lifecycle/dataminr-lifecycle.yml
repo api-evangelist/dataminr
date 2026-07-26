@@ -1,0 +1,20 @@
+generated: '2026-07-18'
+method: searched
+source: https://developer.dataminr.com
+versioning:
+  scheme: uri-path
+  current:
+    alerts: api/3
+    account: account/2
+    auth: auth/2
+  docs: https://developer.dataminr.com
+deprecation:
+  policy_url: null
+  sunset_header: false
+  note: No public deprecation policy or RFC 8594 Sunset/Deprecation header support documented.
+sla:
+  url: null
+  note: SLA is governed per enterprise subscription; not publicly published.
+status_page: https://status.dataminr.com
+status_page_access: login-gated
+deprecated_operations: []
