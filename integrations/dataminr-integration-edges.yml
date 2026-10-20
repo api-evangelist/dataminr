@@ -1,5 +1,13 @@
-generated: '2026-10-13'
+generated: '2026-10-20'
 method: searched
+source:
+- crowdstrike/integrations/crowdstrike-integration-edges.yml
+- microsoft-sentinel/integrations/microsoft-sentinel-integration-edges.yml
+- palo-alto-networks/integrations/palo-alto-networks-integration-edges.yml
+- https://zapier.com/apps/dataminr/integrations
+- https://n8n.io/integrations/dataminr/
+- https://composio.dev/toolkits/dataminr
+- https://monid.ai/tools/dataminr
 checked:
 - crowdstrike/integrations/crowdstrike-integration-edges.yml
 - https://aws.amazon.com/marketplace/
@@ -8,6 +16,11 @@ checked:
 - microsoft-teams/integrations/microsoft-teams-integration-edges.yml
 - palo-alto-networks/integrations/palo-alto-networks-integration-edges.yml
 - slack/integrations/slack-integration-edges.yml
+- https://composio.dev/toolkits/dataminr
+- https://monid.ai/tools/dataminr
+- https://n8n.io/integrations/dataminr/
+- https://zapier.com/apps/dataminr/integrations
+summary: null
 marketplace_apps: []
 edges:
 - partner_name: AWS Marketplace
@@ -174,7 +187,4 @@ edges:
   detected: '2026-10-18'
   detected_by: mirror-platform-listings.py
   category: Slack app
-source:
-- crowdstrike/integrations/crowdstrike-integration-edges.yml
-- microsoft-sentinel/integrations/microsoft-sentinel-integration-edges.yml
-- palo-alto-networks/integrations/palo-alto-networks-integration-edges.yml
+templates: []

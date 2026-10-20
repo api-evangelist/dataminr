@@ -1,15 +1,6 @@
 aid: dataminr
 name: Dataminr
-description: >-
-  Dataminr delivers AI-powered real-time event, threat and risk intelligence,
-  detecting breaking events and emerging risks across more than one million
-  public data sources using proprietary large language models and multi-modal
-  fusion AI. Its product lines span corporate security, cyber defense, public
-  sector (First Alert) and newsroom situational awareness, serving government
-  agencies and a large share of the Fortune 50. The Dataminr Pulse API exposes
-  real-time alert consumption plus watchlist and account management over an
-  OAuth2-secured REST gateway (gateway.dataminr.com), enabling integrations with
-  SIEM, SOAR and security operations tooling.
+description: Dataminr delivers AI-powered real-time event, threat and risk intelligence, detecting breaking events and emerging risks across more than one million public data sources using proprietary large language models and multi-modal fusion AI. Its product lines span corporate security, cyber defense, public sector (First Alert) and newsroom situational awareness, serving government agencies and a large share of the Fortune 50. The Dataminr Pulse API exposes real-time alert consumption plus watchlist and account management over an OAuth2-secured REST gateway (gateway.dataminr.com), enabling integrations with SIEM, SOAR and security operations tooling.
 deliveryModel:
   model: saas
   open_source: false
@@ -39,8 +30,8 @@ x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - ivp
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-20 (local-v5; was portfolio-lead)
 specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-18'
@@ -62,29 +53,18 @@ tags_raw:
 - Security
 - Artificial Intelligence
 - Alerting
-apis:
-- name: Dataminr Pulse API
-  description: >-
-    OAuth2-secured REST API for consuming Dataminr real-time alerts and managing
-    watchlists/lists. Token flow at /auth/2/token; alert polling at /api/3/alerts;
-    account and list management at /account/2/*.
-  humanURL: https://developer.dataminr.com
-  baseURL: https://gateway.dataminr.com
-  tags:
-  - Threat Intelligence
-  - Alerting
-  - Real-Time
-  properties:
-  - type: Authentication
-    url: authentication/dataminr-authentication.yml
-  - type: Documentation
-    url: https://developer.dataminr.com
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Hosts
+  url: hosts/dataminr-hosts.yml
+- type: IntegrationEdges
+  url: integrations/dataminr-integration-edges.yml
+- type: Vendors
+  url: vendors/dataminr-vendors.yml
 - type: Website
   url: https://www.dataminr.com
 - type: DeveloperPortal
@@ -117,10 +97,37 @@ common:
   url: conformance/dataminr-conformance.yml
 - type: DomainSecurity
   url: security/dataminr-domain-security.yml
-- type: LLMsTxt
-  url: llms/dataminr-llms.txt
+apis:
+- name: Dataminr Pulse API
+  description: OAuth2-secured REST API for consuming Dataminr real-time alerts and managing watchlists/lists. Token flow at /auth/2/token; alert polling at /api/3/alerts; account and list management at /account/2/*.
+  humanURL: https://developer.dataminr.com
+  baseURL: https://gateway.dataminr.com
+  tags:
+  - Threat Intelligence
+  - Alerting
+  - Real-Time
+  properties:
+  - type: Authentication
+    url: authentication/dataminr-authentication.yml
+  - type: Documentation
+    url: https://developer.dataminr.com
+  aid: dataminr:dataminr-pulse-api
 x-enrichment:
-  date: '2026-07-19'
-  status: backfilled
-  pass: local-v1
-  note: backfilled from .gitignore signal + verified work evidence
+  date: '2026-10-20'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v5
+x-coverage:
+  state: gated
+  reason: customer-only-docs
+  detail: The Dataminr Developer Portal (a Salesforce Experience Cloud site at developer.dataminr.com) states all documentation requires an API-provisioned account and 302s every docs page such as /s/get-started to /s/login; no public OpenAPI, llms.txt, MCP server or SDK package was found.
+  evidence:
+  - url: https://developer.dataminr.com/s/get-started
+    status: 302
+  - url: https://developer.dataminr.com/llms.txt
+    status: 401
+  - url: https://gateway.dataminr.com/openapi.json
+    status: 404
+  - url: https://developer.dataminr.com/s/
+    status: 200
+  checked: '2026-10-20'
